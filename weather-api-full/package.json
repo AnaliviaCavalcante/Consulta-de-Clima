@@ -1,0 +1,16 @@
+
+{
+  "name": "weather-api-full",
+  "version": "1.0.0",
+  "description": "Projeto completo Node.js com backend e frontend que consome uma API simulada de clima, sem banco de dados",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "mock": "node api/mockWeatherAPI.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "node-fetch": "^3.3.2"
+  }
+}
