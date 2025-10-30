@@ -63,4 +63,4 @@ http://localhost:3000
 Digite o nome de uma cidade (ex: SãoPaulo, RioDeJaneiro, Fortaleza ou Curitiba)
 
 ---
-Autor: **ChatGPT - Projeto Exemplo Node.js Completo**
+
