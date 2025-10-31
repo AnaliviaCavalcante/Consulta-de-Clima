@@ -1,38 +1,46 @@
-
 import express from "express";
-import fetch from "node-fetch";
 
 const app = express();
-const PORT = 3000;
+
+const PORT = process.env.PORT || 3000; 
+
 
 app.use(express.static("public"));
 
+const weatherData = {
+  SãoPaulo: { temp: 25, condition: "Ensolarado" },
+  RioDeJaneiro: { temp: 29, condition: "Parcialmente nublado" },
+  Fortaleza: { temp: 31, condition: "Quente e úmido" },
+  Curitiba: { temp: 19, condition: "Chuvoso" },
+};
+
+
 app.get("/weather/:city", async (req, res) => {
   const { city } = req.params;
-  const apiUrl = `http://localhost:4000/api/weather/${city}`;
-
-  try {
-    const response = await fetch(apiUrl);
-
-    if (!response.ok) {
-      return res.status(response.status).json({ error: "Cidade não encontrada" });
-    }
-
-    const data = await response.json();
-
-    const result = {
-      cidade: data.city,
-      temperatura: `${data.temperature}°C`,
-      clima: data.condition,
-      atualizado_em: data.timestamp,
-    };
-
-    res.json(result);
-  } catch (error) {
-    res.status(500).json({ error: "Erro ao obter dados da API" });
+  const data = weatherData[city]; 
+  if (!data) {
+    return res.status(404).json({ error: "Cidade não encontrada" });
   }
+
+
+  const mockApiResponse = {
+    city,
+    temperature: data.temp,
+    condition: data.condition,
+    timestamp: new Date().toISOString(),
+  };
+
+  
+  const result = {
+    cidade: mockApiResponse.city,
+    temperatura: `${mockApiResponse.temperature}°C`,
+    clima: mockApiResponse.condition,
+    atualizado_em: mockApiResponse.timestamp,
+  };
+
+  res.json(result);
 });
 
 app.listen(PORT, () =>
-  console.log(`Servidor principal rodando em http://localhost:${PORT}`)
+  console.log(`Servidor principal rodando na porta ${PORT}`)
 );
