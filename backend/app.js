@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3001;
 app.use(cors());
 app.use(express.json());
 
-app.use(express.static(__dirname));
+
 
 app.get('/api/clima/:cidade', (req, res) => {
     const cidade = req.params.cidade.toLowerCase();
@@ -45,4 +45,5 @@ app.post('/api/clima', (req, res) => {
 
 app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);
+
 });
