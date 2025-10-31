@@ -1,0 +1,32 @@
+{
+  "fortaleza": {
+    "temperatura": "30°C",
+    "condicao": "Ensolarado",
+    "umidade": "70%",
+    "vento": "10km/h"
+  },
+  "rio de janeiro": {
+    "temperatura": "28°C",
+    "condicao": "Parcialmente nublado",
+    "umidade": "65%",
+    "vento": "8km/h"
+  },
+  "mogi mirim": {
+    "temperatura": "20°C",
+    "condicao": "Nublado",
+    "umidade": "50%",
+    "vento": "11km/h"
+  },
+  "mogi guaçu": {
+    "temperatura": "22°C",
+    "condicao": "Nublado",
+    "umidade": "45%",
+    "vento": "11km/h"
+  },
+  "sao paulo": {
+    "temperatura": "22°C",
+    "condicao": "Garoa",
+    "umidade": "85%",
+    "vento": "15km/h"
+  }
+}
