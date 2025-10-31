@@ -13,8 +13,8 @@ document.getElementById("searchBtn").addEventListener("click", async () => {
   }
 
   try {
-   
-   const response = await fetch(`/api/clima/${city.toLowerCase()}`);
+    const response = await fetch(`http://localhost:3001/api/clima/${city.toLowerCase()}`);
+  
     const data = await response.json();
 
  
@@ -43,4 +43,5 @@ document.getElementById("searchBtn").addEventListener("click", async () => {
     errorMsg.textContent = "Erro ao conectar com o servidor!";
     resultCard.classList.add("hidden");
   }
+
 });
