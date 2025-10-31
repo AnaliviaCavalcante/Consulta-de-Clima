@@ -1,11 +1,18 @@
 import express from "express";
+import path from "path";
+import { fileURLToPath } from "url"; 
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const publicFolderPath = path.join(__dirname, "public");
+// ---
 
 const app = express();
+const PORT = process.env.PORT || 3000;
 
-const PORT = process.env.PORT || 3000; 
+app.use(express.static(publicFolderPath));
 
-
-app.use(express.static("public"));
 
 const weatherData = {
   SãoPaulo: { temp: 25, condition: "Ensolarado" },
@@ -17,11 +24,11 @@ const weatherData = {
 
 app.get("/weather/:city", async (req, res) => {
   const { city } = req.params;
-  const data = weatherData[city]; 
+  const data = weatherData[city];
+
   if (!data) {
     return res.status(404).json({ error: "Cidade não encontrada" });
   }
-
 
   const mockApiResponse = {
     city,
@@ -30,7 +37,6 @@ app.get("/weather/:city", async (req, res) => {
     timestamp: new Date().toISOString(),
   };
 
-  
   const result = {
     cidade: mockApiResponse.city,
     temperatura: `${mockApiResponse.temperature}°C`,
@@ -39,6 +45,11 @@ app.get("/weather/:city", async (req, res) => {
   };
 
   res.json(result);
+});
+
+
+app.get("/", (req, res) => {
+  res.sendFile(path.join(publicFolderPath, "index.html"));
 });
 
 app.listen(PORT, () =>
