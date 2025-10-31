@@ -29,14 +29,15 @@ Este é um projeto simples de consulta de clima, desenvolvido como um trabalho a
 Siga estes passos para rodar o projeto na sua máquina.
 
 **Pré-requisitos:**
+
 * Ter o [Node.js](https://nodejs.org/en) instalado.
 
 **Passos:**
 
 1.  **Clone o repositório:**
     ```bash
-    git clone [https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git](https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git)
-    cd SEU_REPOSITORIO
+    git clone [https://github.com/AnaliviaCavalcante/Consulta-de-Clima.git](https://github.com/AnaliviaCavalcante/Consulta-de-Clima.git)
+    cd Consulta-de-Clima
     ```
 
 2.  **Instale as dependências do backend:**
