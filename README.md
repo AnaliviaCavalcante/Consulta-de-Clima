@@ -64,5 +64,5 @@ Siga estes passos para rodar o projeto na sua máquina.
 
 O servidor `app.js` expõe os seguintes endpoints:
 
-* `GET /api/clima/:cidade`: Retorna os dados do clima para a cidade especificada (ex: `fortaleza`).
-* `POST /api/clima`: Adiciona ou atualiza os dados de clima para uma nova cidade no `dados.json`.
+* `GET http://localhost:3001/api/clima/:cidade`: Retorna os dados do clima para a cidade especificada (ex: `fortaleza`).
+* `POST http://localhost:3001/api/clima`: Adiciona ou atualiza os dados de clima para uma nova cidade no `dados.json`.
