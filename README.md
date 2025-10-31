@@ -73,5 +73,5 @@ O servidor `app.js` expõe os seguintes endpoints:
 *    "condicao": "Encoberto",
 *    "umidade": "68%",
 *   "vento": "7km/h"
-* }
-*}
+*       }
+*    }
