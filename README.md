@@ -66,3 +66,12 @@ O servidor `app.js` expõe os seguintes endpoints:
 
 * `GET http://localhost:3001/api/clima/:cidade`: Retorna os dados do clima para a cidade especificada (ex: `fortaleza`).
 * `POST http://localhost:3001/api/clima`: Adiciona ou atualiza os dados de clima para uma nova cidade no `dados.json`.
+* ex: {
+  "cidade": "belo horizonte",
+  "clima": {
+    "temperatura": "24°C",
+    "condicao": "Encoberto",
+    "umidade": "68%",
+    "vento": "7km/h"
+  }
+}
